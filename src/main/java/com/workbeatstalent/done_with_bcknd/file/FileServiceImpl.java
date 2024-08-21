@@ -13,7 +13,7 @@ public class FileServiceImpl implements FileService {
     @Override
     public String upload(final String path, final MultipartFile file) throws IOException {
         final var filename = file.getOriginalFilename();
-        final var filePath = file + File.pathSeparator + filename;
+        final var filePath = path + File.pathSeparator + filename;
         final var fileObject = new File(path);
 
         // Create folder if not exists
