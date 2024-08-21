@@ -7,3 +7,6 @@ spring:
   profiles:
     active:
       - dev
+
+file.local.path: images/
+local.url: http://localhost:8989
