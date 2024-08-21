@@ -1,0 +1,9 @@
+server:
+  port: 8989
+
+spring:
+  application:
+    name: done-with-bcknd
+  profiles:
+    active:
+      - dev
