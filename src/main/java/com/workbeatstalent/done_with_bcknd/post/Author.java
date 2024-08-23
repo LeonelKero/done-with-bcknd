@@ -28,7 +28,7 @@ public class Author {
     private String lastname;
 
     @NotBlank
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     public Author(String firstname, String lastname, String email) {
