@@ -5,6 +5,7 @@ This backend application is designed and build on top of Spring Boot 3.3.2 to se
 ## Features
 
 - File Upload/Download
+- Register Authors
 - Post/Get item
 
 ## Technologies
