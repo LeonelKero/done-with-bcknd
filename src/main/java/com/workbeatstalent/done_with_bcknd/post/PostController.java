@@ -33,6 +33,6 @@ public record PostController(PostService postService) {
     public ResponseEntity<?> savePost(final @PathVariable(name = "id") Long id, final @RequestPart String postRequest, final @RequestPart Collection<MultipartFile> images) throws JsonProcessingException {
         final var postRequestDTO = new ObjectMapper().readValue(postRequest, PostRequestDTO.class);
         final var post = this.postService.save(id, postRequestDTO, images);
-        return null;
+        return new ResponseEntity<>(post, HttpStatus.CREATED);
     }
 }

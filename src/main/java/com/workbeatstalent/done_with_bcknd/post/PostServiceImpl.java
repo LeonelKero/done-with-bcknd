@@ -47,7 +47,7 @@ public class PostServiceImpl implements PostService {
         // If the author exists, proceed to Post construction
         // Save files (images) first
         final var localFilePath = this.utils.getLocalFilePath();
-        // TODO: Could check - remove files
+        // TODO: Handle uploading file with same name - this raise an exception
         final var savedFilenames = files.stream().map(file -> {
             try {
                 return this.fileService.upload(localFilePath, file);
