@@ -8,5 +8,13 @@ spring:
     active:
       - dev
 
+# /api-docs endpoint custom path
+#  springdoc.api-docs.path=/api-docs
+springdoc:
+  api-docs:
+    path: /api-docs/**
+  swagger-ui:
+    path: /swagger-ui.html
+
 file.local.path: images/
 local.url: http://localhost:8989
