@@ -23,8 +23,9 @@ public record FileController(FileService fileService, Utils utils) {
 
     @GetMapping(path = {"/download/{filename}"})
     public ResponseEntity<Void> download(final @PathVariable(name = "filename") String filename, final HttpServletResponse servletResponse) throws IOException {
+        System.out.println(" *****> " + servletResponse.getLocale().getDisplayCountry());
         final var file = this.fileService.download(this.utils.getLocalFilePath(), filename);
-        servletResponse.setContentType(MediaType.IMAGE_PNG_VALUE);
+        servletResponse.setContentType(MediaType.IMAGE_JPEG_VALUE);
         StreamUtils.copy(file, servletResponse.getOutputStream());
         return new ResponseEntity<>(HttpStatus.OK);
     }

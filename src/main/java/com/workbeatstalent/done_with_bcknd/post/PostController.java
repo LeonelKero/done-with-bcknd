@@ -2,7 +2,6 @@ package com.workbeatstalent.done_with_bcknd.post;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.workbeatstalent.done_with_bcknd.post.dto.PostDTO;
 import com.workbeatstalent.done_with_bcknd.post.dto.PostRequestDTO;
 import com.workbeatstalent.done_with_bcknd.post.dto.PostResponseDTO;
 import org.springframework.http.HttpStatus;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Collection;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = {"/api/v1/posts"})

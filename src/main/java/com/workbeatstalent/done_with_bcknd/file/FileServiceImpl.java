@@ -27,6 +27,7 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public InputStream download(final String path, final String filename) throws FileNotFoundException {
+        // TODO: Check that image file exist into database
         final var filePath = path + File.pathSeparator + filename;
         return new FileInputStream(filePath);
     }
