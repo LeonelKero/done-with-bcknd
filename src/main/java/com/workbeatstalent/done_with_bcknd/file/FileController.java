@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+//import java.net.InetAddress;
 
 @RestController
 @RequestMapping(path = {"/api/v1/files"})
@@ -23,7 +24,8 @@ public record FileController(FileService fileService, Utils utils) {
 
     @GetMapping(path = {"/download/{filename}"})
     public ResponseEntity<Void> download(final @PathVariable(name = "filename") String filename, final HttpServletResponse servletResponse) throws IOException {
-        System.out.println(" *****> " + servletResponse.getLocale().getDisplayCountry());
+//        System.out.println(" *****> " + servletResponse.getLocale().getDisplayCountry());
+//        System.out.println("=== HOST ===> " + InetAddress.getLocalHost().getHostAddress());
         final var file = this.fileService.download(this.utils.getLocalFilePath(), filename);
         servletResponse.setContentType(MediaType.IMAGE_JPEG_VALUE);
         StreamUtils.copy(file, servletResponse.getOutputStream());
